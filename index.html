@@ -4,22 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>CAY162موقع</title>
- <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfC5JMG58KBg_KnFYBZtVjGz105I2rGdOqAzbr5w9cKtA2fawGKDJebe4&s=10"/>
-<meta name="description"
-content="CAY منصة للتوعية بالأمان الرقمي والأمن السيبراني والبرمجة والتقنية.">
+<title>CAY STUDIO</title>
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNCNTQlts7CRUFfRRkHssrAnOER9ZhYickK3oQrs7zpQ&s=10"/>
+<meta name="description" content="CAY Digital Studio - Web Design & Cyber Academy">
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   CAY V4
-   CINEMATIC BLACK & WHITE
-===================================================== */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -27,1438 +25,902 @@ html{
 }
 
 body{
-    font-family:Arial,Tahoma,sans-serif;
-    background:#020202;
+    background:#050505;
     color:#fff;
+    font-family:Cairo,Arial,sans-serif;
     line-height:1.8;
     overflow-x:hidden;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-5;
-
-    background:
-        radial-gradient(
-            circle at 50% 10%,
-            rgba(255,255,255,.07),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 10% 60%,
-            rgba(255,255,255,.025),
-            transparent 25%
-        ),
-        #020202;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-4;
-    pointer-events:none;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        );
-
-    background-size:55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black 0%,
-            transparent 90%
-        );
-}
-
-/* =====================================================
-   PARTICLES
-===================================================== */
-
-.particles{
-    position:fixed;
-    inset:0;
-    z-index:-3;
-    pointer-events:none;
+body.lock{
     overflow:hidden;
 }
 
-.particle{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:#fff;
-    border-radius:50%;
-    opacity:.35;
-
-    animation:
-        particleMove
-        linear infinite;
-}
-
-@keyframes particleMove{
-
-    from{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-
-    15%{
-        opacity:.35;
-    }
-
-    80%{
-        opacity:.2;
-    }
-
-    to{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
-
-}
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar{
-    position:fixed;
-    top:16px;
-    left:50%;
-    transform:translateX(-50%);
-
-    width:min(1150px,92%);
-
-    padding:12px 16px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    background:rgba(10,10,10,.72);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:18px;
-
-    z-index:1000;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.45);
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
+a{
+    color:inherit;
     text-decoration:none;
-    color:#fff;
+}
 
+button,input,textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:5000;
+    height:72px;
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #222;
+}
+
+.nav{
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
     font-weight:900;
     letter-spacing:4px;
-
-    font-size:22px;
 }
 
-.brand-shield{
-    width:35px;
-    height:35px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid #444;
-    border-radius:10px;
-    background:#0d0d0d;
-
-    font-size:18px;
+.logo small{
+    display:block;
+    color:#666;
+    font-size:7px;
+    letter-spacing:2px;
+    margin-top:-9px;
 }
 
-.nav-links{
+.navlinks{
     display:flex;
-    align-items:center;
     gap:20px;
-
-    list-style:none;
 }
 
-.nav-links a{
-    color:#999;
-    text-decoration:none;
-    font-size:14px;
-    transition:.2s;
+.navlinks a{
+    color:#888;
+    font-size:12px;
+    transition:.25s;
 }
 
-.nav-links a:hover{
+.navlinks a:hover{
     color:#fff;
 }
 
-.nav-cta{
-    color:#000 !important;
-    background:#fff;
-
-    padding:8px 14px;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero{
-    min-height:100vh;
-    position:relative;
-
+    min-height:760px;
     display:flex;
     align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:130px 20px 80px;
+    position:relative;
     overflow:hidden;
+    background:#050505;
 }
 
-.hero::before{
+.hero:before{
     content:"";
     position:absolute;
+    inset:0;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+    opacity:.45;
+}
 
-    width:600px;
-    height:600px;
-
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.04);
-
-    box-shadow:
-        0 0 100px rgba(255,255,255,.025),
-        inset 0 0 100px rgba(255,255,255,.02);
-
-    pointer-events:none;
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(#ffffff06 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff06 1px,transparent 1px);
+    background-size:50px 50px;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
+    padding-top:80px;
     max-width:850px;
 }
 
-.status{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-
-    padding:7px 13px;
-
-    border:1px solid #292929;
-    border-radius:30px;
-
-    background:#080808;
-    color:#888;
-
-    font-size:12px;
-    margin-bottom:28px;
-
-    letter-spacing:1px;
+.badge{
+    display:inline-block;
+    padding:6px 15px;
+    border:1px solid #333;
+    border-radius:50px;
+    color:#aaa;
+    font-size:11px;
 }
 
-.status-dot{
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-    background:#fff;
-
-    box-shadow:
-        0 0 12px rgba(255,255,255,.8);
-}
-
-.hero-title{
-    font-size:
-        clamp(90px,18vw,190px);
-
-    line-height:.78;
-
-    letter-spacing:
-        clamp(8px,2vw,25px);
-
+.hero h1{
+    margin-top:20px;
+    font-size:clamp(48px,8vw,90px);
+    line-height:1.05;
     font-weight:900;
-    color:#fff;
-
-    text-shadow:
-        0 0 60px rgba(255,255,255,.09);
 }
 
-.hero-subtitle{
-    font-size:
-        clamp(25px,4vw,43px);
-
-    margin-top:30px;
-    font-weight:800;
-}
-
-.hero-description{
-    max-width:680px;
-    margin:20px auto;
-
+.hero h1 span{
+    display:block;
     color:#777;
-    font-size:17px;
 }
 
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+.hero-text{
+    max-width:700px;
+    margin-top:25px;
+    color:#999;
+}
 
-    margin-top:28px;
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:25px;
 }
 
 .btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-
-    padding:13px 23px;
-
-    border-radius:12px;
-    text-decoration:none;
-
-    font-weight:bold;
-
+    padding:11px 19px;
     border:1px solid #333;
-
-    transition:.2s;
-
-    cursor:pointer;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.btn-white{
-    background:#fff;
-    color:#000;
-}
-
-.btn-dark{
-    background:#090909;
-    color:#fff;
-}
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-section{
-    padding:100px 7%;
-}
-
-.section-header{
-    max-width:760px;
-    margin-bottom:45px;
-}
-
-.kicker{
-    color:#666;
+    border-radius:10px;
     font-size:12px;
-    letter-spacing:3px;
-    margin-bottom:10px;
-}
-
-.section-title{
-    font-size:
-        clamp(34px,5vw,58px);
-
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.section-text{
-    color:#777;
-}
-
-/* =====================================================
-   STATS
-===================================================== */
-
-.stats{
-    display:grid;
-    grid-template-columns:
-        repeat(4,1fr);
-    gap:15px;
-}
-
-.stat{
-    padding:25px;
-    text-align:center;
-
-    background:
-        rgba(10,10,10,.8);
-
-    border:
-        1px solid #1d1d1d;
-
-    border-radius:18px;
-}
-
-.stat-number{
-    font-size:34px;
-    font-weight:900;
-}
-
-.stat-label{
-    color:#666;
-    font-size:13px;
-}
-
-/* =====================================================
-   CARDS
-===================================================== */
-
-.grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(230px,1fr));
-
-    gap:18px;
-}
-
-.card{
-    position:relative;
-
-    padding:28px;
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.012)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.09);
-
-    backdrop-filter:blur(12px);
-
-    overflow:hidden;
-
+    font-weight:800;
     transition:.25s;
 }
 
-.card::before{
-    content:"";
-
-    position:absolute;
-
-    width:170px;
-    height:170px;
-
-    top:-90px;
-    right:-90px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.1),
-            transparent 70%
-        );
+.btn:hover{
+    transform:translateY(-3px);
+    border-color:#777;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    border-color:#444;
+.white{
+    background:#fff;
+    color:#000;
 }
 
-.icon{
-    width:52px;
-    height:52px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:15px;
-
-    background:#0b0b0b;
-    border:1px solid #292929;
-
-    font-size:23px;
-
-    margin-bottom:20px;
+.dark{
+    background:#0d0d0d;
+    color:#fff;
 }
 
-.card h3{
-    font-size:21px;
-    margin-bottom:10px;
+/* STATS */
+
+.stats{
+    position:relative;
+    z-index:10;
+    margin-top:-60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
-.card p{
-    color:#777;
-    font-size:15px;
+.stat{
+    padding:20px;
+    text-align:center;
+    background:#0a0a0a;
+    border:1px solid #222;
+    border-radius:18px;
 }
 
-/* =====================================================
-   BLACKMAIL
-===================================================== */
-
-.protection{
-    background:
-        linear-gradient(
-            180deg,
-            #050505,
-            #020202
-        );
-
-    border-top:1px solid #121212;
-    border-bottom:1px solid #121212;
+.stat b{
+    display:block;
+    font-size:27px;
 }
 
-.protection-card{
-    border-color:#252525;
+.stat span{
+    color:#666;
+    font-size:11px;
 }
 
-.number{
-    color:#555;
-    font-size:12px;
-    margin-bottom:10px;
+/* SECTIONS */
+
+section{
+    padding:95px 0;
+}
+
+.label{
+    color:#666;
+    font-size:10px;
     letter-spacing:2px;
 }
 
-/* =====================================================
-   SERVICE
-===================================================== */
-
-.service-card{
-    text-align:center;
-    max-width:650px;
-    margin:auto;
-}
-
-.price{
-    font-size:68px;
+.title{
+    margin:5px 0 10px;
+    font-size:40px;
     font-weight:900;
-    margin:10px 0;
 }
 
-.price span{
-    font-size:17px;
-    color:#666;
-}
-
-.features{
-    list-style:none;
-    margin:20px 0;
+.desc{
     color:#888;
+    max-width:750px;
+    font-size:13px;
 }
 
-.features li{
-    margin:7px;
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:35px;
 }
 
-/* =====================================================
-   INPUTS
-===================================================== */
-
-input,
-textarea{
-    width:100%;
-    padding:14px;
-
-    background:#060606;
-    color:#fff;
-
-    border:1px solid #292929;
-    border-radius:12px;
-
-    outline:none;
-    font-family:inherit;
-
-    margin-top:8px;
+.card{
+    padding:25px;
+    background:#090909;
+    border:1px solid #222;
+    border-radius:20px;
+    transition:.3s;
 }
 
-input:focus,
-textarea:focus{
+.card:hover{
+    transform:translateY(-5px);
     border-color:#555;
 }
 
-textarea{
-    min-height:130px;
-    resize:vertical;
+.icon{
+    font-size:28px;
 }
 
-.action{
-    margin-top:10px;
-
-    padding:12px 20px;
-
-    border:0;
-    border-radius:11px;
-
-    background:#fff;
-    color:#000;
-
-    font-weight:bold;
-    cursor:pointer;
-
-    transition:.2s;
+.card h3{
+    margin:8px 0;
 }
 
-.action:hover{
-    transform:translateY(-2px);
+.card p{
+    color:#888;
+    font-size:12px;
 }
 
-.result{
-    margin-top:15px;
+/* ACADEMY */
 
-    padding:15px;
-
-    background:#070707;
-
-    border:1px solid #242424;
-
-    border-radius:13px;
-
-    color:#999;
-
-    min-height:45px;
+.academy{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    margin-top:35px;
 }
 
-/* =====================================================
-   PROGRESS
-===================================================== */
-
-.progress{
-    height:9px;
-
-    background:#1b1b1b;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin:15px 0;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-
-    background:#fff;
-
-    transition:.4s;
-}
-
-/* =====================================================
-   QUIZ
-===================================================== */
-
-.quiz-option{
-    width:100%;
-
-    margin:6px 0;
-
-    padding:13px;
-
-    text-align:right;
-
-    background:#080808;
-    color:#fff;
-
-    border:1px solid #292929;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.quiz-option:hover{
-    background:#111;
-}
-
-/* =====================================================
-   DICTIONARY
-===================================================== */
-
-.term-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-}
-
-.term-button{
-    padding:9px 15px;
-
+.level{
+    padding:20px;
     background:#090909;
+    border:1px solid #222;
+    border-radius:18px;
+    transition:.25s;
+}
+
+.level:hover{
+    transform:translateY(-5px);
+    border-color:#777;
+}
+
+.level button{
+    width:100%;
+    background:none;
     color:#fff;
-
-    border:1px solid #292929;
-
-    border-radius:10px;
-
-    cursor:pointer;
+    border:0;
+    text-align:right;
 }
 
-.term-box{
-    margin-top:15px;
+.level strong{
+    color:#555;
+    font-size:26px;
+}
 
-    padding:18px;
+.level p{
+    color:#777;
+    font-size:11px;
+}
 
-    background:#070707;
-
+.lesson{
+    display:none;
+    margin-top:20px;
+    padding:25px;
+    background:#090909;
     border:1px solid #252525;
-
-    border-radius:14px;
-
-    color:#999;
+    border-radius:18px;
 }
 
-/* =====================================================
-   CODE
-===================================================== */
+.lesson.active{
+    display:block;
+}
+
+.lesson p{
+    color:#999;
+    font-size:13px;
+}
 
 .code{
     direction:ltr;
     text-align:left;
-
+    margin-top:15px;
+    padding:15px;
     background:#020202;
-    color:#bbb;
-
-    border:1px solid #252525;
-
-    padding:20px;
-
-    border-radius:15px;
-
+    border:1px solid #222;
+    border-radius:10px;
+    color:#aaa;
+    font-family:monospace;
     overflow:auto;
 }
 
-/* =====================================================
-   PROJECTS
-===================================================== */
+/* LAB */
 
-.project{
-    min-height:220px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #050505
-        );
-
-    cursor:pointer;
+.lab{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:35px;
 }
 
-.project-number{
-    color:#555;
+.labbox{
+    padding:25px;
+    background:#090909;
+    border:1px solid #222;
+    border-radius:20px;
+}
+
+.input{
+    width:100%;
+    margin-top:12px;
+    padding:12px;
+    background:#030303;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:10px;
+    outline:none;
+}
+
+.result{
+    min-height:45px;
+    margin-top:12px;
+    padding:12px;
+    background:#030303;
+    border-radius:10px;
+    color:#888;
+}
+
+/* TOOLS */
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:35px;
+}
+
+.tool{
+    padding:24px;
+    background:#090909;
+    border:1px solid #222;
+    border-radius:20px;
+}
+
+.tool textarea,
+.tool input{
+    width:100%;
+    margin-top:12px;
+    padding:12px;
+    background:#030303;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:10px;
+    outline:none;
+}
+
+.tool-result{
+    margin-top:10px;
+    padding:10px;
+    background:#030303;
+    color:#888;
+    border-radius:8px;
+    word-break:break-all;
+}
+
+/* SHOWCASE */
+
+.showcase{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.site{
+    overflow:hidden;
+    background:#090909;
+    border:1px solid #252525;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.site:hover{
+    transform:translateY(-5px);
+}
+
+.site-image{
+    height:210px;
+    background-position:center;
+    background-size:cover;
+}
+
+.site-body{
+    padding:20px;
+}
+
+.site-body p{
+    color:#777;
     font-size:12px;
 }
 
-.project h3{
-    font-size:25px;
-    margin-top:5px;
+.price{
+    margin:7px 0;
+    font-size:18px;
+    font-weight:900;
 }
 
-.project .demo-button{
-    margin-top:16px;
-    align-self:flex-start;
-
-    padding:9px 15px;
-
-    border-radius:10px;
-
-    background:#fff;
-    color:#000;
-
-    border:0;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-/* =====================================================
-   DEMO VIEWER
-===================================================== */
-
-#demoViewer{
-    display:none;
-    padding-top:120px;
-
-    min-height:100vh;
-
-    background:#020202;
-}
-
-.demo-top{
+.site-actions{
     display:flex;
+    gap:8px;
+}
 
+.site-actions .btn{
+    flex:1;
+}
+
+/* PRICING */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.price-card{
+    padding:28px;
+    background:#090909;
+    border:1px solid #252525;
+    border-radius:22px;
+}
+
+.price-card.featured{
+    border-color:#fff;
+}
+
+.price-number{
+    margin:10px 0 20px;
+    font-size:38px;
+    font-weight:900;
+}
+
+.price-card ul{
+    list-style:none;
+}
+
+.price-card li{
+    color:#999;
+    font-size:12px;
+    padding:4px 0;
+}
+
+.price-card li:before{
+    content:"✓ ";
+    color:#fff;
+}
+
+/* CTA */
+
+.cta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:45px;
+    background:#0a0a0a;
+    border:1px solid #292929;
+    border-radius:25px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid #1e1e1e;
+    color:#555;
+    font-size:11px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:none;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(15px);
+}
+
+.modal.show{
+    display:block;
+}
+
+.modal-bar{
+    height:65px;
+    padding:0 20px;
+    display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:25px;
-
-    padding:15px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid #292929;
-
-    border-radius:16px;
+    background:#090909;
+    border-bottom:1px solid #252525;
 }
 
-.demo-status{
-    color:#777;
-
-    font-size:12px;
-
-    letter-spacing:2px;
+.modal-title{
+    font-weight:900;
 }
 
-.demo-site{
-    min-height:650px;
+.close{
+    width:40px;
+    height:40px;
+    border:1px solid #333;
+    border-radius:10px;
+    background:#111;
+    color:#fff;
+    font-size:22px;
+}
 
-    border:1px solid #292929;
+.demo-wrap{
+    width:min(1150px,94%);
+    height:calc(100vh - 95px);
+    margin:15px auto;
+    overflow:auto;
+    background:#fff;
+    color:#111;
+    border-radius:18px;
+}
 
-    border-radius:25px;
+/* DEMOS */
 
-    overflow:hidden;
-
-    background:#080808;
-
-    box-shadow:
-        0 30px 90px rgba(0,0,0,.55);
+.demo{
+    min-height:900px;
+    background:#fff;
+    color:#111;
 }
 
 .demo-nav{
+    position:sticky;
+    top:0;
+    z-index:5;
+    height:70px;
+    padding:0 30px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:20px;
-
-    padding:18px 25px;
-
-    border-bottom:1px solid #222;
-
-    background:#0a0a0a;
+    background:#fff;
+    border-bottom:1px solid #ddd;
 }
 
 .demo-logo{
     font-size:22px;
     font-weight:900;
-
-    letter-spacing:2px;
 }
 
 .demo-links{
     display:flex;
-
     gap:18px;
+}
 
-    color:#777;
+.demo-links button{
+    background:none;
+    border:0;
+    color:#555;
+    font-size:11px;
+}
 
-    font-size:13px;
+.demo-links button:hover{
+    color:#000;
 }
 
 .demo-hero{
-    min-height:410px;
-
+    min-height:470px;
+    padding:55px;
     display:flex;
-
-    flex-direction:column;
-
     align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:40px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #222,
-            #080808 65%
-        );
+    background-position:center;
+    background-size:cover;
+    color:#fff;
 }
 
-.demo-hero-icon{
-    font-size:65px;
-    margin-bottom:15px;
+.demo-hero-content{
+    max-width:650px;
 }
 
 .demo-hero h1{
-    font-size:
-        clamp(42px,8vw,85px);
-
-    line-height:1;
-
-    margin-bottom:15px;
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.1;
 }
 
 .demo-hero p{
-    color:#888;
-
-    max-width:600px;
-
-    margin-bottom:20px;
+    margin-top:15px;
+    color:#ddd;
 }
 
-.demo-content{
-    padding:45px 7%;
+.demo-button{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 22px;
+    background:#111;
+    color:#fff;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:800;
 }
 
-.demo-content h2{
+.demo-section{
+    padding:65px 40px;
+}
+
+.demo-section h2{
     font-size:30px;
-    margin-bottom:20px;
 }
 
 .demo-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:25px;
 }
 
-.demo-item{
-    padding:25px;
-
-    background:#101010;
-
-    border:1px solid #292929;
-
-    border-radius:16px;
-
-    text-align:center;
-
-    transition:.2s;
+.demo-card{
+    padding:22px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:15px;
 }
 
-.demo-item:hover{
-    transform:translateY(-4px);
-    border-color:#555;
-}
-
-.demo-item-icon{
-    font-size:35px;
+.demo-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
     margin-bottom:10px;
 }
 
-.demo-item strong{
-    display:block;
-
-    font-size:18px;
-
-    margin-bottom:5px;
+.demo-card p{
+    color:#777;
+    font-size:12px;
 }
 
-.demo-item span{
-    color:#777;
-
-    font-size:13px;
+.demo-card button{
+    margin-top:12px;
+    padding:9px 15px;
+    background:#111;
+    color:#fff;
+    border:0;
+    border-radius:7px;
 }
 
 .demo-footer{
-    padding:30px;
-
-    text-align:center;
-
-    color:#666;
-
-    border-top:1px solid #222;
-}
-
-/* DEMO SPECIAL */
-
-.demo-banner{
-    padding:18px;
-
-    margin-bottom:25px;
-
-    border:1px solid #292929;
-
-    border-radius:14px;
-
-    background:#0b0b0b;
-
-    text-align:center;
-
-    color:#888;
-}
-
-.demo-price{
-    font-size:22px;
-
-    font-weight:bold;
-
-    margin-top:10px;
-}
-
-.demo-small{
-    color:#666;
-    font-size:13px;
-}
-
-/* =====================================================
-   ASSISTANT
-===================================================== */
-
-.chat{
-    min-height:130px;
-
-    padding:20px;
-
-    background:#060606;
-
-    border:1px solid #252525;
-
-    border-radius:15px;
-
-    color:#999;
-
-    margin-bottom:10px;
-}
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact-info{
-    text-align:center;
-    margin-top:25px;
-    color:#666;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-    padding:60px 20px;
-
-    text-align:center;
-
-    background:#010101;
-
-    border-top:1px solid #121212;
-}
-
-.footer-logo{
-    font-size:40px;
-
-    letter-spacing:8px;
-
-    font-weight:900;
-}
-
-footer p{
-    color:#555;
-    margin-top:8px;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-.mobile-menu{
-    display:none;
-
-    width:42px;
-    height:42px;
-
-    align-items:center;
-    justify-content:center;
-
-    background:#0b0b0b;
-
-    border:1px solid #292929;
-
-    color:#fff;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    font-size:20px;
-}
-
-@media(max-width:800px){
-
-    .navbar{
-        padding:10px 12px;
-    }
-
-    .nav-links{
-
-        display:none;
-
-        position:absolute;
-
-        top:65px;
-        right:0;
-
-        width:100%;
-
-        flex-direction:column;
-
-        padding:15px;
-
-        background:
-            rgba(8,8,8,.96);
-
-        border:1px solid #222;
-
-        border-radius:15px;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .mobile-menu{
-        display:flex;
-    }
-
-    .stats{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .demo-links{
-        display:none;
-    }
-
-    .demo-nav{
-        padding:16px;
-    }
-
-}
-
-@media(max-width:480px){
-
-    section{
-        padding:75px 5%;
-    }
-
-    .hero{
-        padding-top:110px;
-    }
-
-    .hero::before{
-        width:330px;
-        height:330px;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stat{
-        padding:18px 10px;
-    }
-
-    .stat-number{
-        font-size:25px;
-    }
-
-    #demoViewer{
-        padding-top:100px;
-    }
-
-    .demo-site{
-        border-radius:16px;
-    }
-
-    .demo-hero{
-        min-height:350px;
-        padding:25px 15px;
-    }
-
-    .demo-content{
-        padding:35px 20px;
-    }
-
-}
-
-/* =====================================================
-   SIMPLE REVEAL
-===================================================== */
-
-.reveal{
-    opacity:0;
-
-    transform:translateY(15px);
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
-}
-
-.reveal.show{
-    opacity:1;
-    transform:translateY(0);
-}
-/* =====================================================
-   CAY NEW FEATURES
-===================================================== */
-
-.cay-terminal{
-    background:#030303;
-    border:1px solid #292929;
-    border-radius:18px;
-    overflow:hidden;
-}
-
-.terminal-head{
-    padding:12px 18px;
-    background:#0b0b0b;
-    border-bottom:1px solid #222;
-    color:#777;
-    font-size:13px;
-}
-
-.terminal-body{
-    padding:20px;
-    min-height:260px;
-    direction:ltr;
-    text-align:left;
-    font-family:monospace;
-    color:#aaa;
-    white-space:pre-wrap;
-}
-
-.terminal-input{
-    display:flex;
-    gap:8px;
-    padding:15px;
-    border-top:1px solid #222;
-}
-
-.terminal-input input{
-    margin:0;
-    font-family:monospace;
-}
-
-.emergency{
-    border:1px solid #333;
-    background:
-        radial-gradient(circle at top,#191919,#050505 65%);
-}
-
-.step{
-    padding:20px;
-    background:#090909;
-    border:1px solid #292929;
-    border-radius:15px;
-}
-
-.step-number{
-    font-size:12px;
-    color:#666;
-    letter-spacing:2px;
-}
-
-.password-generator{
-    display:grid;
-    gap:12px;
-}
-
-.range-value{
-    color:#888;
-}
-
-.certificate{
-    text-align:center;
     padding:35px;
-    background:#080808;
-    border:1px solid #333;
-    border-radius:18px;
+    text-align:center;
+    background:#111;
+    color:#fff;
 }
 
-.certificate-name{
-    font-size:32px;
-    font-weight:900;
-    margin:20px 0;
+/* DEMO HERO IMAGES */
+
+.restaurant .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
 }
 
-.level-result{
-    font-size:22px;
-    font-weight:bold;
+.cafe .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.business .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.fashion .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.beauty .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.fitness .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.realestate .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.tech .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.photo .demo-hero{
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.navlinks{
+    display:none;
+}
+
+.stats,
+.cards,
+.showcase,
+.pricing,
+.tools{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.academy{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.lab{
+    grid-template-columns:1fr;
+}
+
+.demo-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:550px){
+
+section{
+    padding:70px 0;
+}
+
+.stats,
+.cards,
+.showcase,
+.pricing,
+.tools,
+.academy{
+    grid-template-columns:1fr;
+}
+
+.hero{
+    min-height:680px;
+}
+
+.title{
+    font-size:30px;
+}
+
+.cta{
+    display:block;
+    padding:30px;
+}
+
+.demo-hero{
+    padding:35px 25px;
+}
+
+.demo-section{
+    padding:45px 25px;
+}
+
+.demo-links{
+    display:none;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-
-<!-- PARTICLES -->
-
-<div class="particles">
-
-<span class="particle" style="left:8%;animation-duration:12s"></span>
-<span class="particle" style="left:17%;animation-duration:17s"></span>
-<span class="particle" style="left:29%;animation-duration:14s"></span>
-<span class="particle" style="left:41%;animation-duration:19s"></span>
-<span class="particle" style="left:53%;animation-duration:13s"></span>
-<span class="particle" style="left:67%;animation-duration:18s"></span>
-<span class="particle" style="left:79%;animation-duration:15s"></span>
-<span class="particle" style="left:91%;animation-duration:20s"></span>
-
-</div>
-
-
 <!-- NAV -->
 
-<nav class="navbar">
+<nav>
+<div class="container nav">
 
-<a href="#" class="brand">
-
-<span class="brand-shield">
-🛡️
-</span>
-
+<a href="#top" class="logo">
 CAY
-
+<small>DIGITAL STUDIO</small>
 </a>
 
-<ul class="nav-links" id="navLinks">
+<div class="navlinks">
+<a href="#security">الأمان</a>
+<a href="#academy">الأكاديمية</a>
+<a href="#lab">المختبر</a>
+<a href="#tools">الأدوات</a>
+<a href="#showcase">المواقع</a>
+<a href="#contact">تواصل</a>
+</div>
 
-<li>
-<a href="#security">
-الأمان
-</a>
-</li>
-
-<li>
-<a href="#academy">
-الأكاديمية
-</a>
-</li>
-
-<li>
-<a href="#tools">
-الأدوات
-</a>
-</li>
-
-<li>
-<a href="#lab">
- المختبر
-</a>
-</li>
-   
-<li>
-<a href="#terminal">
-Terminal
-</a>
-</li>
-   
-<li>
-<a class="nav-cta" href="#contact">
-تواصل
-</a>
-</li>
-
-</ul>
-
-<button
-class="mobile-menu"
-onclick="toggleMenu()">
-
-☰
-
-</button>
-
+</div>
 </nav>
 
 
 <!-- HERO -->
 
-<header class="hero">
+<header class="hero" id="top">
 
-<div class="hero-content">
+<div class="container hero-content">
 
-   <div">
-      <div class="brand">CAY</div>
-   </div>
-   
-<div class="status">
-
-<span class="status-dot"></span>
-
-CAY / DIGITAL SAFETY
-
+<div class="badge">
+● CAY DIGITAL STUDIO
 </div>
 
-<h1 class="hero-title">
-CAY
+<h1>
+ابنِ موقعك.
+<span>واحْمِ عالمك الرقمي.</span>
 </h1>
 
-<h2 class="hero-subtitle">
-الأمان الرقمي يبدأ منك.
-</h2>
-
-<p class="hero-description">
-
-منصة للتوعية بالأمان الرقمي،
-الأمن السيبراني، البرمجة، الشبكات
-والتقنية — بطريقة بسيطة وعملية.
-
+<p class="hero-text">
+تصميم مواقع احترافية + تعليم الأمن السيبراني
++ أدوات تعليمية + مختبرات آمنة.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a
-href="#academy"
-class="btn btn-white">
-
-ابدأ التعلم
-
+<a href="#showcase" class="btn white">
+شاهد المواقع
 </a>
 
-<a
-href="#security"
-class="btn btn-dark">
-
-استكشف CAY
-
+<a href="#academy" class="btn dark">
+ابدأ التعلم
 </a>
 
 </div>
@@ -1470,306 +932,65 @@ class="btn btn-dark">
 
 <!-- STATS -->
 
-<section>
-
-<div class="stats reveal">
+<div class="container stats">
 
 <div class="stat">
-
-<div class="stat-number">
-24/7
-</div>
-
-<div class="stat-label">
-Digital Awareness
-</div>
-
+<b>9</b>
+<span>نماذج مواقع</span>
 </div>
 
 <div class="stat">
-
-<div class="stat-number">
-8+
-</div>
-
-<div class="stat-label">
-مجالات تقنية
-</div>
-
+<b>5</b>
+<span>مستويات تعليم</span>
 </div>
 
 <div class="stat">
-
-<div class="stat-number">
-$50
-</div>
-
-<div class="stat-label">
-Website Design
-</div>
-
+<b>CTF</b>
+<span>مختبر تدريبي</span>
 </div>
 
 <div class="stat">
-
-<div class="stat-number">
-CAY
-</div>
-
-<div class="stat-label">
-Digital Safety
+<b>24/7</b>
+<span>تعلم رقمي</span>
 </div>
 
 </div>
-
-</div>
-
-</section>
 
 
 <!-- SECURITY -->
 
 <section id="security">
 
-<div class="section-header reveal">
+<div class="container">
 
-<div class="kicker">
-DIGITAL SECURITY
-</div>
+<div class="label">01 / SECURITY</div>
+<h2 class="title">الأمان الرقمي</h2>
 
-<h2 class="section-title">
-أساسيات الحماية الرقمية.
-</h2>
-
-<p class="section-text">
-خطوات بسيطة تساعدك على حماية حساباتك
-ومعلوماتك أثناء استخدام الإنترنت.
+<p class="desc">
+تعلم أساسيات حماية حساباتك وأجهزتك ومواقعك.
 </p>
 
+<div class="cards">
+
+<div class="card">
+<div class="icon">🔐</div>
+<h3>كلمات المرور</h3>
+<p>تعلم إنشاء كلمات مرور قوية وفريدة.</p>
 </div>
 
-<div class="grid">
-
-<div class="card reveal">
-
-<div class="icon">
-🔐
+<div class="card">
+<div class="icon">🛡️</div>
+<h3>المصادقة الثنائية</h3>
+<p>تعلم أهمية 2FA لحماية الحسابات.</p>
 </div>
 
-<h3>
-كلمات المرور
-</h3>
-
-<p>
-استخدم كلمات مرور قوية ومختلفة
-وفعّل المصادقة الثنائية.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">
-🎣
-</div>
-
-<h3>
-التصيد الإلكتروني
-</h3>
-
-<p>
-انتبه للروابط والرسائل التي تطلب
-معلومات حساسة.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">
-📱
-</div>
-
-<h3>
-الخصوصية
-</h3>
-
-<p>
-راجع صلاحيات التطبيقات
-ولا تشارك بياناتك الحساسة.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">
-🛡️
-</div>
-
-<h3>
-التحديثات
-</h3>
-
-<p>
-حافظ على تحديث نظامك وتطبيقاتك
-للحصول على إصلاحات أمنية.
-</p>
-
+<div class="card">
+<div class="icon">🎣</div>
+<h3>التصيد</h3>
+<p>تعرف على الروابط والرسائل المشبوهة.</p>
 </div>
 
 </div>
-
-</section>
-
-
-<!-- BLACKMAIL -->
-
-<section class="protection">
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY PROTECTION
-</div>
-
-<h2 class="section-title">
-🛡️ محارب الابتزاز.
-</h2>
-
-<p class="section-text">
-إذا تعرضت لابتزاز إلكتروني، لا تتصرف تحت الضغط.
-احفظ الأدلة واطلب المساعدة المناسبة.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card protection-card reveal">
-
-<div class="number">
-01 / DON'T PAY
-</div>
-
-<h3>
-لا تدفع
-</h3>
-
-<p>
-الدفع لا يضمن توقف المبتز.
-</p>
-
-</div>
-
-<div class="card protection-card reveal">
-
-<div class="number">
-02 / SAVE
-</div>
-
-<h3>
-احفظ الأدلة
-</h3>
-
-<p>
-احتفظ بالمحادثات والروابط وبيانات الحساب.
-</p>
-
-</div>
-
-<div class="card protection-card reveal">
-
-<div class="number">
-03 / STOP
-</div>
-
-<h3>
-لا ترسل المزيد
-</h3>
-
-<p>
-لا ترسل صورًا أو معلومات إضافية.
-</p>
-
-</div>
-
-<div class="card protection-card reveal">
-
-<div class="number">
-04 / GET HELP
-</div>
-
-<h3>
-اطلب المساعدة
-</h3>
-
-<p>
-تحدث مع شخص موثوق أو جهة مختصة.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SERVICE -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY STUDIO
-</div>
-
-<h2 class="section-title">
-نصمم موقعك.
-</h2>
-
-<p class="section-text">
-تصميم مواقع للمشاريع والشركات والمتاجر
-والمطاعم وغيرها.
-</p>
-
-</div>
-
-<div class="card service-card reveal">
-
-<div class="icon" style="margin:0 auto 20px">
-💻
-</div>
-
-<h3>
-Website Design
-</h3>
-
-<div class="price">
-$50
-<span>
-ابتداءً من
-</span>
-</div>
-
-<ul class="features">
-
-<li>✓ تصميم متجاوب</li>
-<li>✓ مناسب للهاتف والكمبيوتر</li>
-<li>✓ تصميم حسب المشروع</li>
-<li>✓ صفحة تعريفية أو تجارية</li>
-<li>✓ جاهز للنشر</li>
-
-</ul>
-
-<a
-href="#contact"
-class="btn btn-white">
-
-أطلب موقعك
-
-</a>
 
 </div>
 
@@ -1780,133 +1001,180 @@ class="btn btn-white">
 
 <section id="academy">
 
-<div class="section-header reveal">
+<div class="container">
 
-<div class="kicker">
-CAY ACADEMY
-</div>
+<div class="label">02 / ACADEMY</div>
+<h2 class="title">أكاديمية CAY</h2>
 
-<h2 class="section-title">
-تعلم. جرّب. طوّر نفسك.
-</h2>
-
-<p class="section-text">
-مجموعة مجالات لبناء أساس تقني قوي.
+<p class="desc">
+مسار تعليمي من البداية إلى تحديات CTF.
 </p>
 
+<div class="academy">
+
+<div class="level">
+<button onclick="lesson(1)">
+<strong>01</strong>
+<h3>الأساسيات</h3>
+<p>Cybersecurity Basics</p>
+</button>
 </div>
 
-<div class="grid">
+<div class="level">
+<button onclick="lesson(2)">
+<strong>02</strong>
+<h3>Linux</h3>
+<p>Linux Fundamentals</p>
+</button>
+</div>
 
-<div class="card reveal">
+<div class="level">
+<button onclick="lesson(3)">
+<strong>03</strong>
+<h3>الشبكات</h3>
+<p>Networking</p>
+</button>
+</div>
 
-<div class="icon">🐍</div>
+<div class="level">
+<button onclick="lesson(4)">
+<strong>04</strong>
+<h3>Web Security</h3>
+<p>حماية المواقع</p>
+</button>
+</div>
 
-<h3>
-Python
-</h3>
+<div class="level">
+<button onclick="lesson(5)">
+<strong>05</strong>
+<h3>CTF</h3>
+<p>تحديات تعليمية</p>
+</button>
+</div>
 
+</div>
+
+
+<div id="lesson1" class="lesson">
+<h3>🛡️ أساسيات الأمن السيبراني</h3>
 <p>
-تعلم أساسيات البرمجة والمنطق والأتمتة.
+Confidentiality وIntegrity وAvailability هي أساسيات مهمة لفهم حماية المعلومات.
 </p>
+<div class="code">
+CONFIDENTIALITY
+INTEGRITY
+AVAILABILITY
+</div>
+</div>
+
+
+<div id="lesson2" class="lesson">
+<h3>🐧 Linux</h3>
+<p>تعلم أوامر Linux الأساسية داخل جهازك أو مختبرك.</p>
+<div class="code">
+pwd
+ls
+cd
+mkdir
+touch
+cat
+whoami
+</div>
+</div>
+
+
+<div id="lesson3" class="lesson">
+<h3>🌐 Networking</h3>
+<p>تعرف على IP وDNS وHTTP وHTTPS والمنافذ.</p>
+<div class="code">
+IP = عنوان الجهاز
+DNS = اسم النطاق ← IP
+HTTPS = اتصال مشفر
+PORT = نقطة اتصال
+</div>
+</div>
+
+
+<div id="lesson4" class="lesson">
+<h3>🔒 Web Security</h3>
+<p>
+تعلم المفاهيم الدفاعية مثل XSS وSQL Injection وCSRF
+وكيفية حماية التطبيقات.
+</p>
+<div class="code">
+INPUT VALIDATION
+OUTPUT ENCODING
+AUTHENTICATION
+AUTHORIZATION
+SECURE HEADERS
+</div>
+</div>
+
+
+<div id="lesson5" class="lesson">
+<h3>🧪 CTF</h3>
+<p>تحديات تعليمية داخل بيئة آمنة ومصممة للتعلم.</p>
+<div class="code">
+FIND → ANALYZE → TEST → LEARN
+</div>
+</div>
 
 </div>
 
-<div class="card reveal">
+</section>
 
-<div class="icon">🌐</div>
 
-<h3>
-HTML & CSS
-</h3>
+<!-- LAB -->
 
-<p>
-بناء وتصميم صفحات الويب.
-</p>
+<section id="lab">
+
+<div class="container">
+
+<div class="label">03 / SAFE LAB</div>
+<h2 class="title">المختبر</h2>
+
+<div class="lab">
+
+<div class="labbox">
+
+<h3>🔐 فحص كلمة مرور</h3>
+
+<input
+class="input"
+id="pass"
+type="password"
+placeholder="كلمة تجريبية"
+oninput="passwordCheck()"
+>
+
+<div id="passResult" class="result">
+—
+</div>
 
 </div>
 
-<div class="card reveal">
 
-<div class="icon">🌐</div>
+<div class="labbox">
 
-<h3>
-Networking
-</h3>
+<h3>🎣 اختبار التصيد</h3>
 
-<p>
-IP وDNS وTCP وHTTP وأساسيات الشبكات.
+<p class="desc">
+تعرف على إشارات الخطر في الرسائل.
 </p>
 
+<button
+class="btn white"
+onclick="phishing()"
+style="margin-top:15px"
+>
+اختبر نفسك
+</button>
+
+<div id="phishingResult" class="result">
+—
 </div>
 
-<div class="card reveal">
-
-<div class="icon">🐧</div>
-
-<h3>
-Linux / Kali
-</h3>
-
-<p>
-تعلم Linux وأساسيات الأمن السيبراني القانوني.
-</p>
-
 </div>
-
-<div class="card reveal">
-
-<div class="icon">📱</div>
-
-<h3>
-Termux
-</h3>
-
-<p>
-بيئة أوامر شبيهة بـ Linux على Android.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">🐙</div>
-
-<h3>
-GitHub
-</h3>
-
-<p>
-إدارة المشاريع البرمجية ونشر المواقع.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">🛡️</div>
-
-<h3>
-Cybersecurity
-</h3>
-
-<p>
-مبادئ حماية الأنظمة واختبارها بشكل قانوني.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="icon">🤖</div>
-
-<h3>
-AI
-</h3>
-
-<p>
-مقدمة عن الذكاء الاصطناعي وتطبيقاته.
-</p>
 
 </div>
 
@@ -1919,2560 +1187,1173 @@ AI
 
 <section id="tools">
 
-<div class="section-header reveal">
+<div class="container">
 
-<div class="kicker">
-CAY TOOLS
-</div>
+<div class="label">04 / TOOLS</div>
+<h2 class="title">أدوات تعليمية</h2>
 
-<h2 class="section-title">
-أدوات تعليمية.
-</h2>
+<div class="tools">
 
-<p class="section-text">
-أدوات بسيطة تعمل محليًا داخل المتصفح.
-</p>
+<div class="tool">
 
-</div>
-
-<div class="grid">
-
-<div class="card reveal">
-
-<div class="icon">
-🔑
-</div>
-
-<h3>
-فحص قوة كلمة المرور
-</h3>
-
-<p>
-الفحص يتم داخل الصفحة فقط.
-</p>
+<h3>🔑 مولد كلمات المرور</h3>
 
 <input
-type="password"
-id="password"
-placeholder="اكتب كلمة المرور">
-
-<button
-class="action"
-onclick="checkPassword()">
-
-فحص القوة
-
-</button>
-
-<div class="progress">
-
-<div
-class="progress-bar"
-id="passwordBar">
-</div>
-
-</div>
-
-<div
-class="result"
-id="passwordResult">
-
-بانتظار الفحص...
-
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="icon">
-🔗
-</div>
-
-<h3>
-تحليل الرابط
-</h3>
-
-<p>
-تحليل تعليمي لبعض خصائص الرابط.
-</p>
-
-<input
-id="url"
-placeholder="https://example.com">
-
-<button
-class="action"
-onclick="checkURL()">
-
-تحليل الرابط
-
-</button>
-
-<div
-class="result"
-id="urlResult">
-
-بانتظار الرابط...
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- XP -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY XP SYSTEM
-</div>
-
-<h2 class="section-title">
-🏆 طوّر مستواك.
-</h2>
-
-</div>
-
-<div class="card reveal">
-
-<h3 id="level">
-المستوى 🟢 مبتدئ
-</h3>
-
-<p>
-XP:
-<span id="xp">
-0
-</span>
-/
-100
-</p>
-
-<div class="progress">
-
-<div
-class="progress-bar"
-id="xpBar">
-</div>
-
-</div>
-
-<button
-class="action"
-onclick="addXP(20)">
-
-إكمال تحدي +20 XP
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- QUIZ -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CYBER QUIZ
-</div>
-
-<h2 class="section-title">
-🧠 اختبر معلوماتك.
-</h2>
-
-</div>
-
-<div class="card reveal">
-
-<h3>
-ما وظيفة DNS؟
-</h3>
-
-<br>
-
-<button
-class="quiz-option"
-onclick="quiz(false)">
-
-تشفير الملفات
-
-</button>
-
-<button
-class="quiz-option"
-onclick="quiz(true)">
-
-تحويل أسماء النطاقات إلى عناوين IP
-
-</button>
-
-<button
-class="quiz-option"
-onclick="quiz(false)">
-
-زيادة سرعة الإنترنت
-
-</button>
-
-<div
-class="result"
-id="quizResult">
-
-اختر إجابة.
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DICTIONARY -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-TECH DICTIONARY
-</div>
-
-<h2 class="section-title">
-📚 قاموس التقنية.
-</h2>
-
-</div>
-
-<div class="card reveal">
-
-<div class="term-buttons">
-
-<button
-class="term-button"
-onclick="term('IP')">
-IP
-</button>
-
-<button
-class="term-button"
-onclick="term('DNS')">
-DNS
-</button>
-
-<button
-class="term-button"
-onclick="term('VPN')">
-VPN
-</button>
-
-<button
-class="term-button"
-onclick="term('SSH')">
-SSH
-</button>
-
-<button
-class="term-button"
-onclick="term('API')">
-API
-</button>
-
-</div>
-
-<div
-class="term-box"
-id="termBox">
-
-اضغط على أي مصطلح.
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- LAB -->
-
-<section id="lab">
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY LAB
-</div>
-
-<h2 class="section-title">
-🧪 المختبر.
-</h2>
-
-<p class="section-text">
-تحديات تعليمية آمنة.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card reveal">
-
-<div class="icon">
-🐍
-</div>
-
-<h3>
-تحدي Python
-</h3>
-
-<p>
-أي واحد من التالي لغة برمجة؟
-</p>
-
-<br>
-
-<button
-class="quiz-option"
-onclick="lab(false)">
-
-HTML
-
-</button>
-
-<button
-class="quiz-option"
-onclick="lab(true)">
-
-Python
-
-</button>
-
-<button
-class="quiz-option"
-onclick="lab(false)">
-
-HTTP
-
-</button>
-
-<div
-class="result"
-id="labResult">
-
-ابدأ التحدي.
-
-</div>
-
-</div>
-
-
-<div class="card reveal">
-
-<div class="icon">
-💻
-</div>
-
-<h3>
-مثال برمجي آمن
-</h3>
-
-<pre class="code">name = "CAY"
-
-print("Hello " + name)</pre>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PORTFOLIO
-===================================================== -->
-
-<section id="portfolio">
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY STUDIO
-</div>
-
-<h2 class="section-title">
-نماذج أعمال تفاعلية.
-</h2>
-
-<p class="section-text">
-اضغط على أي نموذج لمشاهدة الموقع التجريبي مباشرة داخل CAY.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<!-- RESTAURANT -->
-
-<div
-class="card project reveal"
-onclick="openDemo('restaurant')">
-
-<span class="project-number">
-01
-</span>
-
-<h3>
-🍽️ Restaurant
-</h3>
-
-<p>
-La Vista Restaurant
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('restaurant')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-
-<!-- CAFE -->
-
-<div
-class="card project reveal"
-onclick="openDemo('cafe')">
-
-<span class="project-number">
-02
-</span>
-
-<h3>
-☕ Café
-</h3>
-
-<p>
-Café Noir
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('cafe')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-
-<!-- BUSINESS -->
-
-<div
-class="card project reveal"
-onclick="openDemo('business')">
-
-<span class="project-number">
-03
-</span>
-
-<h3>
-🏢 Business
-</h3>
-
-<p>
-Nova Business
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('business')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-
-<!-- FASHION -->
-
-<div
-class="card project reveal"
-onclick="openDemo('fashion')">
-
-<span class="project-number">
-04
-</span>
-
-<h3>
-👕 Fashion
-</h3>
-
-<p>
-Urban Wear
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('fashion')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-
-<!-- BEAUTY -->
-
-<div
-class="card project reveal"
-onclick="openDemo('beauty')">
-
-<span class="project-number">
-05
-</span>
-
-<h3>
-💄 Beauty
-</h3>
-
-<p>
-Luna Beauty
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('beauty')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-
-<!-- PHOTOGRAPHY -->
-
-<div
-class="card project reveal"
-onclick="openDemo('photo')">
-
-<span class="project-number">
-06
-</span>
-
-<h3>
-📸 Photography
-</h3>
-
-<p>
-Alex Photography
-</p>
-
-<button
-class="demo-button"
-onclick="event.stopPropagation();openDemo('photo')">
-
-مشاهدة الموقع →
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     DEMO VIEWER
-===================================================== -->
-
-<section id="demoViewer">
-
-<div class="demo-top">
-
-<button
-class="action"
-onclick="closeDemo()">
-
-← الرجوع إلى CAY
-
-</button>
-
-<div
-class="demo-status"
-id="demoStatus">
-
-CAY DEMO
-
-</div>
-
-</div>
-
-<div id="demoContent"></div>
-
-</section>
-
-
-<!-- ASSISTANT -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY ASSISTANT
-</div>
-
-<h2 class="section-title">
-🤖 المساعد الذكي.
-</h2>
-
-<p class="section-text">
-مساعد تعليمي محلي لأساسيات التقنية.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div
-class="chat"
-id="chat">
-
-أهلاً بك في CAY 👋
-<br><br>
-
-اسألني عن Python أو HTML أو Linux
-أو الشبكات أو الأمن السيبراني.
-
-</div>
-
-<input
-id="question"
-placeholder="اكتب سؤالك هنا...">
-
-<button
-class="action"
-onclick="ask()">
-
-إرسال
-
-</button>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     CAY TERMINAL
-===================================================== -->
-
-<section id="terminal">
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY TERMINAL
-</div>
-
-<h2 class="section-title">
-🖥️ محطة CAY.
-</h2>
-
-<p class="section-text">
-واجهة تعليمية لتجربة أوامر ومعلومات تقنية آمنة.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<div class="cay-terminal">
-
-<div class="terminal-head">
-CAY Educational Terminal
-</div>
-
-<div
-class="terminal-body"
-id="terminalOutput">
-
-CAY Terminal v1.0
-
-اكتب help لعرض الأوامر المتاحة.
-
-</div>
-
-<div class="terminal-input">
-
-<input
-id="terminalInput"
-placeholder="اكتب أمرًا مثل help">
-
-<button
-class="action"
-onclick="runTerminal()">
-
-تنفيذ
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CYBER LEVEL TEST
-===================================================== -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CYBER LEVEL TEST
-</div>
-
-<h2 class="section-title">
-🧠 اعرف مستواك.
-</h2>
-
-<p class="section-text">
-اختبار تعليمي سريع في أساسيات الأمن السيبراني.
-</p>
-
-</div>
-
-<div class="card reveal">
-
-<h3>
-ما أفضل طريقة للتعامل مع رابط مشبوه؟
-</h3>
-
-<br>
-
-<button
-class="quiz-option"
-onclick="levelTest(false)">
-
-فتحه مباشرة لمعرفة محتواه
-
-</button>
-
-<button
-class="quiz-option"
-onclick="levelTest(true)">
-
-التحقق منه وعدم إدخال معلومات حساسة
-
-</button>
-
-<button
-class="quiz-option"
-onclick="levelTest(false)">
-
-إرساله إلى جميع الأصدقاء
-
-</button>
-
-<div
-class="result"
-id="levelResult">
-
-اختر إجابة.
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PASSWORD GENERATOR
-===================================================== -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-PASSWORD GENERATOR
-</div>
-
-<h2 class="section-title">
-🔐 مولّد كلمات المرور.
-</h2>
-
-</div>
-
-<div class="card reveal password-generator">
-
-<label>
-طول كلمة المرور:
-</label>
-
-<input
-type="number"
-id="passLength"
-min="8"
-max="32"
-value="16">
-
-<button
-class="action"
-onclick="generatePassword()">
-
-توليد كلمة مرور
-
-</button>
-
-<input
-id="generatedPassword"
+id="generated"
 readonly
-placeholder="ستظهر هنا">
+placeholder="اضغط توليد"
+>
 
 <button
-class="action"
-onclick="copyPassword()">
-
-نسخ كلمة المرور
-
+class="btn white"
+onclick="generatePassword()"
+style="margin-top:10px"
+>
+توليد
 </button>
 
-<div
-class="result"
-id="generatorResult">
+</div>
 
-لا يتم حفظ كلمة المرور داخل الموقع.
 
+<div class="tool">
+
+<h3>🔤 Base64</h3>
+
+<textarea
+id="baseInput"
+rows="3"
+placeholder="اكتب النص"
+></textarea>
+
+<button
+class="btn white"
+onclick="base64Encode()"
+style="margin-top:10px"
+>
+ترميز
+</button>
+
+<div id="baseResult" class="tool-result">
+—
 </div>
 
 </div>
 
-</section>
 
+<div class="tool">
 
-<!-- =====================================================
-     BLACKMAIL EMERGENCY
-===================================================== -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY EMERGENCY
-</div>
-
-<h2 class="section-title">
-🚨 إذا تعرضت للابتزاز.
-</h2>
-
-</div>
-
-<div class="card emergency reveal">
-
-<div class="grid">
-
-<div class="step">
-
-<div class="step-number">
-01 / CALM
-</div>
-
-<h3>
-اهدأ
-</h3>
-
-<p>
-لا تتصرف تحت الضغط ولا تدخل في مفاوضات متسرعة.
-</p>
-
-</div>
-
-<div class="step">
-
-<div class="step-number">
-02 / DON'T PAY
-</div>
-
-<h3>
-لا تدفع
-</h3>
-
-<p>
-الدفع لا يضمن توقف التهديد.
-</p>
-
-</div>
-
-<div class="step">
-
-<div class="step-number">
-03 / SAVE
-</div>
-
-<h3>
-احفظ الأدلة
-</h3>
-
-<p>
-احتفظ بالرسائل واسم الحساب والروابط ولقطات الشاشة.
-</p>
-
-</div>
-
-<div class="step">
-
-<div class="step-number">
-04 / GET HELP
-</div>
-
-<h3>
-اطلب المساعدة
-</h3>
-
-<p>
-تحدث مع شخص بالغ موثوق أو جهة مختصة.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CAY CERTIFICATE
-===================================================== -->
-
-<section>
-
-<div class="section-header reveal">
-
-<div class="kicker">
-CAY CERTIFICATE
-</div>
-
-<h2 class="section-title">
-🏅 شهادة إتمام تعليمية.
-</h2>
-
-<p class="section-text">
-أنشئ شهادة إتمام تعليمية بعد إنهاء اختبار CAY.
-</p>
-
-</div>
-
-<div class="card certificate reveal">
+<h3>🔒 SHA-256</h3>
 
 <input
-id="certificateName"
-placeholder="اكتب اسمك">
+id="hashInput"
+placeholder="اكتب النص"
+>
 
 <button
-class="action"
-onclick="createCertificate()">
-
-إنشاء الشهادة
-
+class="btn white"
+onclick="makeHash()"
+style="margin-top:10px"
+>
+إنشاء Hash
 </button>
 
-<div
-id="certificateResult"
-class="result">
+<div id="hashResult" class="tool-result">
+—
+</div>
 
-أكمل الاختبار أولًا.
+</div>
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- SHOWCASE -->
+
+<section id="showcase">
+
+<div class="container">
+
+<div class="label">05 / CLIENT SHOWCASE</div>
+
+<h2 class="title">تسعة مواقع للزبائن</h2>
+
+<p class="desc">
+اضغط معاينة وشوف الموقع كامل داخل CAY.
+</p>
+
+
+<div class="showcase">
+
+
+<!-- 1 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>La Vista Restaurant</h3>
+<p>مطعم فاخر</p>
+<div class="price">$100</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('restaurant')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('La Vista Restaurant')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Café Noir</h3>
+<p>كافيه عصري</p>
+<div class="price">$100</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('cafe')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Café Noir')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Nova Business</h3>
+<p>شركة وأعمال</p>
+<div class="price">$250</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('business')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Nova Business')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Urban Wear</h3>
+<p>ملابس وفاشن</p>
+<div class="price">$250</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('fashion')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Urban Wear')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Luna Beauty</h3>
+<p>صالون تجميل</p>
+<div class="price">$250</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('beauty')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Luna Beauty')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Titan Fitness</h3>
+<p>نادي رياضي</p>
+<div class="price">$250</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('fitness')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Titan Fitness')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Prime Estate</h3>
+<p>عقارات</p>
+<div class="price">$500</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('estate')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Prime Estate')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>TechZone</h3>
+<p>متجر تقنية</p>
+<div class="price">$500</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('tech')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('TechZone')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="site">
+
+<div class="site-image"
+style="background-image:url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=85')">
+</div>
+
+<div class="site-body">
+<h3>Alex Photography</h3>
+<p>تصوير</p>
+<div class="price">$500</div>
+
+<div class="site-actions">
+<button class="btn white" onclick="openDemo('photo')">
+معاينة
+</button>
+
+<button class="btn dark" onclick="order('Alex Photography')">
+اطلب
+</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section>
+
+<div class="container">
+
+<div class="label">06 / PACKAGES</div>
+<h2 class="title">الباقات</h2>
+
+<div class="pricing">
+
+<div class="price-card">
+
+<h3>Basic</h3>
+
+<div class="price-number">$100</div>
+
+<ul>
+<li>صفحة احترافية</li>
+<li>Responsive</li>
+<li>أزرار التواصل</li>
+<li>تصميم مخصص</li>
+</ul>
+
+<button
+class="btn white"
+style="margin-top:20px"
+onclick="order('باقة Basic')"
+>
+اطلب الباقة
+</button>
+
+</div>
+
+
+<div class="price-card featured">
+
+<h3>Professional</h3>
+
+<div class="price-number">$250</div>
+
+<ul>
+<li>موقع متكامل</li>
+<li>معرض أعمال</li>
+<li>تصميم متقدم</li>
+<li>تحسين تجربة المستخدم</li>
+</ul>
+
+<button
+class="btn white"
+style="margin-top:20px"
+onclick="order('باقة Professional')"
+>
+اطلب الباقة
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Premium</h3>
+
+<div class="price-number">$500</div>
+
+<ul>
+<li>صفحات متعددة</li>
+<li>تصميم متقدم</li>
+<li>Animations</li>
+<li>دعم وتطوير</li>
+</ul>
+
+<button
+class="btn white"
+style="margin-top:20px"
+onclick="order('باقة Premium')"
+>
+اطلب الباقة
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- CONTACT -->
 
 <section id="contact">
 
-<div class="section-header reveal">
+<div class="container">
 
-<div class="kicker">
-CONTACT CAY
-</div>
+<div class="cta">
 
-<h2 class="section-title">
-تواصل معنا.
+<div>
+
+<div class="label">07 / CONTACT</div>
+
+<h2 class="title">
+جاهز تبني مشروعك؟
 </h2>
 
+<p class="desc">
+WhatsApp: 07883350604
+<br>
+Email: bnmvp107@gmail.com
+</p>
+
 </div>
 
-<form
-class="card reveal"
-action="mailto:bnmvp107@gmail.com"
-method="post"
-enctype="text/plain">
+<div class="buttons">
 
-<input
-name="name"
-placeholder="اسمك"
-required>
-
-<input
-name="email"
-type="email"
-placeholder="البريد الإلكتروني"
-required>
-
-<textarea
-name="message"
-placeholder="اكتب رسالتك..."
-required></textarea>
-
-<button
-class="action"
-type="submit">
-
-إرسال الطلب
-
+<button class="btn white" onclick="contactWhatsApp()">
+واتساب
 </button>
 
-</form>
+<button class="btn dark" onclick="contactEmail()">
+Email
+</button>
 
-<div class="contact-info">
+</div>
 
-<p>
-📧 bnmvp107@gmail.com
-</p>
-
-<p>
-📞 07883350604
-</p>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-<div class="footer-logo">
-CAY
+<div class="container">
+© 2026 CAY — Digital Studio & Cyber Academy
 </div>
-
-<p>
-DIGITAL SAFETY • TECHNOLOGY • CODE
-</p>
-
-<p style="margin-top:25px">
-© 2026 CAY — جميع الحقوق محفوظة
-</p>
 
 </footer>
 
 
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-bar">
+
+<div id="modalTitle" class="modal-title">
+Website Preview
+</div>
+
+<button class="close" onclick="closeDemo()">
+×
+</button>
+
+</div>
+
+<div id="demoWrap" class="demo-wrap"></div>
+
+</div>
+
+
 <script>
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+/* ================================
+   NAVIGATION
+================================ */
 
-function toggleMenu(){
+function goTo(id){
 
-    document
-    .getElementById("navLinks")
-    .classList
-    .toggle("active");
+const element=document.getElementById(id);
+
+if(element){
+    element.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+}
 
 }
 
 
-/* =====================================================
-   PASSWORD CHECK
-===================================================== */
+/* ================================
+   ACADEMY
+================================ */
 
-function checkPassword(){
+function lesson(number){
 
-    const password =
-        document.getElementById("password").value;
+document
+.querySelectorAll(".lesson")
+.forEach(function(item){
+    item.classList.remove("active");
+});
 
-    const bar =
-        document.getElementById("passwordBar");
+const selected=document.getElementById(
+    "lesson"+number
+);
 
-    const result =
-        document.getElementById("passwordResult");
+if(selected){
 
-    let score=0;
+selected.classList.add("active");
 
-    if(password.length>=8)
-        score+=25;
+selected.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+});
 
-    if(/[A-Z]/.test(password))
-        score+=20;
-
-    if(/[a-z]/.test(password))
-        score+=20;
-
-    if(/[0-9]/.test(password))
-        score+=20;
-
-    if(/[^A-Za-z0-9]/.test(password))
-        score+=15;
-
-    bar.style.width=score+"%";
-
-    if(!password){
-
-        result.textContent=
-            "اكتب كلمة مرور أولًا.";
-
-        return;
-    }
-
-    if(score<40){
-
-        result.textContent=
-            "🔴 ضعيفة";
-
-    }else if(score<70){
-
-        result.textContent=
-            "🟡 متوسطة";
-
-    }else{
-
-        result.textContent=
-            "🟢 قوية نسبيًا";
-
-    }
+}
 
 }
 
 
-/* =====================================================
-   URL
-===================================================== */
+/* ================================
+   PASSWORD
+================================ */
 
-function checkURL(){
+function passwordCheck(){
 
-    const value =
-        document.getElementById("url")
-        .value
-        .trim();
+const value=document.getElementById("pass").value;
 
-    const result =
-        document.getElementById("urlResult");
+const result=document.getElementById("passResult");
 
-    if(!value){
+if(!value){
 
-        result.textContent=
-            "اكتب رابطًا أولًا.";
+result.textContent="—";
+return;
 
-        return;
-    }
+}
 
-    try{
+let points=0;
 
-        const url =
-            new URL(value);
+if(value.length>=12) points++;
+if(/[A-Z]/.test(value)) points++;
+if(/[a-z]/.test(value)) points++;
+if(/[0-9]/.test(value)) points++;
+if(/[^A-Za-z0-9]/.test(value)) points++;
 
-        let messages=[];
+if(points<=2){
 
-        if(url.protocol==="https:"){
+result.textContent=
+"🔴 ضعيفة — اجعلها أطول وأكثر تنوعاً.";
 
-            messages.push(
-                "✅ يستخدم HTTPS"
-            );
+}else if(points<=4){
 
-        }else{
+result.textContent=
+"🟡 متوسطة — يمكن تحسينها.";
 
-            messages.push(
-                "⚠️ لا يستخدم HTTPS"
-            );
+}else{
 
-        }
+result.textContent=
+"🟢 قوية.";
 
-        if(url.hostname.includes("xn--")){
-
-            messages.push(
-                "⚠️ يحتوي على Punycode"
-            );
-
-        }
-
-        if(url.hostname.length>60){
-
-            messages.push(
-                "⚠️ اسم النطاق طويل بشكل غير معتاد"
-            );
-
-        }
-
-        messages.push(
-            "ℹ️ هذا تحليل تعليمي وليس فحصًا أمنيًا حقيقيًا."
-        );
-
-        result.innerHTML=
-            messages.join("<br>");
-
-    }catch{
-
-        result.textContent=
-            "❌ الرابط غير صالح.";
-
-    }
+}
 
 }
 
 
-/* =====================================================
-   XP
-===================================================== */
+/* ================================
+   PHISHING
+================================ */
 
-let xp=0;
+function phishing(){
 
-function addXP(amount){
+const examples=[
 
-    xp+=amount;
+"رسالة تقول: حسابك سيتوقف خلال 10 دقائق، اضغط الرابط فوراً.",
 
-    if(xp>100)
-        xp=100;
+"رابط يستخدم اسماً قريباً جداً من موقع معروف.",
 
-    document.getElementById("xp")
-        .textContent=xp;
+"شخص يطلب منك رمز التحقق الذي وصلك على الهاتف."
 
-    document.getElementById("xpBar")
-        .style.width=xp+"%";
+];
 
+const item=examples[
+Math.floor(Math.random()*examples.length)
+];
 
-    if(xp>=100){
-
-        document.getElementById("level")
-            .textContent=
-            "المستوى 🟣 متقدم";
-
-    }else if(xp>=50){
-
-        document.getElementById("level")
-            .textContent=
-            "المستوى 🔵 متوسط";
-
-    }else{
-
-        document.getElementById("level")
-            .textContent=
-            "المستوى 🟢 مبتدئ";
-
-    }
+document.getElementById(
+"phishingResult"
+).innerHTML=
+"⚠️ مثال:<br><br>"+
+item+
+"<br><br>لا تدخل معلوماتك ولا تشارك رموز التحقق.";
 
 }
 
 
-/* =====================================================
-   QUIZ
-===================================================== */
+/* ================================
+   PASSWORD GENERATOR
+================================ */
 
-function quiz(correct){
+function generatePassword(){
 
-    const result =
-        document.getElementById("quizResult");
+const chars=
+"ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%";
 
-    if(correct){
+const values=new Uint32Array(20);
 
-        result.textContent=
-            "✅ صحيح! +20 XP";
+crypto.getRandomValues(values);
 
-        addXP(20);
+let result="";
 
-    }else{
+for(let i=0;i<20;i++){
 
-        result.textContent=
-            "❌ إجابة غير صحيحة.";
+result+=chars[
+values[i]%chars.length
+];
 
-    }
+}
+
+document.getElementById(
+"generated"
+).value=result;
 
 }
 
 
-/* =====================================================
-   DICTIONARY
-===================================================== */
+/* ================================
+   BASE64
+================================ */
 
-function term(name){
+function base64Encode(){
 
-    const box =
-        document.getElementById("termBox");
+const value=
+document.getElementById(
+"baseInput"
+).value;
 
-    const terms={
+if(!value){
 
-        IP:
-        "IP هو عنوان يستخدم للتعرف على جهاز أو واجهة شبكة.",
+document.getElementById(
+"baseResult"
+).textContent=
+"اكتب النص أولاً.";
 
-        DNS:
-        "DNS يحول أسماء النطاقات إلى عناوين IP.",
+return;
 
-        VPN:
-        "VPN تقنية تسمح بإنشاء اتصال عبر خادم وسيط وقد توفر تشفيرًا حسب الخدمة.",
+}
 
-        SSH:
-        "SSH بروتوكول للاتصال الآمن بأنظمة بعيدة عبر سطر الأوامر.",
+try{
 
-        API:
-        "API طريقة تسمح للبرامج والخدمات بالتواصل وتبادل البيانات."
+document.getElementById(
+"baseResult"
+).textContent=
+btoa(
+unescape(
+encodeURIComponent(value)
+)
+);
 
-    };
+}catch(e){
 
-    box.textContent=
-        terms[name];
+document.getElementById(
+"baseResult"
+).textContent=
+"تعذر الترميز.";
+
+}
 
 }
 
 
-/* =====================================================
-   LAB
-===================================================== */
+/* ================================
+   SHA256
+================================ */
 
-function lab(correct){
+async function makeHash(){
 
-    const result =
-        document.getElementById("labResult");
+const value=
+document.getElementById(
+"hashInput"
+).value;
 
-    if(correct){
+if(!value){
 
-        result.textContent=
-            "✅ صحيح! Python لغة برمجة. +20 XP";
+document.getElementById(
+"hashResult"
+).textContent=
+"اكتب النص أولاً.";
 
-        addXP(20);
+return;
 
-    }else{
+}
 
-        result.textContent=
-            "❌ حاول مرة أخرى.";
+const data=
+new TextEncoder().encode(value);
 
-    }
+const hash=
+await crypto.subtle.digest(
+"SHA-256",
+data
+);
+
+const bytes=
+new Uint8Array(hash);
+
+const result=
+Array.from(bytes)
+.map(
+x=>x.toString(16).padStart(2,"0")
+)
+.join("");
+
+document.getElementById(
+"hashResult"
+).textContent=result;
 
 }
 
 
-/* =====================================================
-   CAY DEMO SITES
-===================================================== */
+/* ================================
+   WHATSAPP
+================================ */
+
+function order(item){
+
+const message=
+"السلام عليكم، أريد الاستفسار عن "+item+" من CAY.";
+
+window.open(
+"https://wa.me/9647883350604?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+function contactWhatsApp(){
+
+window.open(
+"https://wa.me/9647883350604?text="+
+encodeURIComponent(
+"السلام عليكم، أريد التواصل مع CAY بخصوص تصميم موقع."
+),
+"_blank"
+);
+
+}
+
+function contactEmail(){
+
+window.location.href=
+"mailto:bnmvp107@gmail.com?subject="+
+encodeURIComponent("طلب تصميم موقع CAY");
+
+}
+
+
+/* ================================
+   DEMO SYSTEM
+================================ */
+
+const demoData={
+
+restaurant:{
+title:"La Vista Restaurant",
+className:"restaurant",
+logo:"LA VISTA",
+hero:"طعم يبقى في الذاكرة",
+text:"تجربة مطعم فاخرة تجمع بين المذاق والأجواء الراقية.",
+sections:[
+["القائمة","أطباق الشيف والمأكولات المميزة."],
+["من نحن","مطعم فاخر يهتم بالتفاصيل."],
+["الحجز","احجز طاولتك بسهولة."]
+]
+},
+
+cafe:{
+title:"Café Noir",
+className:"cafe",
+logo:"CAFÉ NOIR",
+hero:"قهوة بمزاج مختلف.",
+text:"مكان هادئ للقهوة والعمل واللقاءات.",
+sections:[
+["القائمة","Espresso • Latte • Iced Coffee"],
+["قصتنا","بدأنا بحب القهوة."],
+["الموقع","ننتظرك يومياً."]
+]
+},
+
+business:{
+title:"Nova Business",
+className:"business",
+logo:"NOVA",
+hero:"نحو مستقبل أعمال أقوى.",
+text:"حلول رقمية تساعد الشركات على النمو.",
+sections:[
+["الخدمات","استراتيجية • تقنية • استشارات"],
+["المشاريع","حلول رقمية للشركات."],
+["تواصل","ابدأ مشروعك معنا."]
+]
+},
+
+fashion:{
+title:"Urban Wear",
+className:"fashion",
+logo:"URBAN",
+hero:"WEAR YOUR STYLE.",
+text:"أزياء عصرية للجيل الجديد.",
+sections:[
+["New Collection","تيشيرتات وجاكيتات وملابس عصرية."],
+["Men","مجموعة الرجال."],
+["Women","مجموعة النساء."]
+]
+},
+
+beauty:{
+title:"Luna Beauty",
+className:"beauty",
+logo:"LUNA",
+hero:"جمالك يبدأ من هنا.",
+text:"خدمات تجميل وعناية بإطلالة راقية.",
+sections:[
+["Hair","قص وتصفيف الشعر."],
+["Makeup","إطلالات المناسبات."],
+["Skincare","العناية بالبشرة."]
+]
+},
+
+fitness:{
+title:"Titan Fitness",
+className:"fitness",
+logo:"TITAN",
+hero:"BUILD YOUR TITAN.",
+text:"تدريب. انضباط. نتائج.",
+sections:[
+["Strength","بناء القوة والعضلات."],
+["Fat Loss","اللياقة وخفض الدهون."],
+["Personal Training","تدريب شخصي."]
+]
+},
+
+estate:{
+title:"Prime Estate",
+className:"realestate",
+logo:"PRIME",
+hero:"اعثر على منزلك القادم.",
+text:"عقارات مختارة في أفضل المواقع.",
+sections:[
+["فلل","فلل حديثة وفاخرة."],
+["شقق","شقق في مواقع مميزة."],
+["منازل","خيارات عائلية متنوعة."]
+]
+},
+
+tech:{
+title:"TechZone",
+className:"tech",
+logo:"TECHZONE",
+hero:"Technology. Simplified.",
+text:"كل ما تحتاجه من التقنية في مكان واحد.",
+sections:[
+["لابتوبات","أجهزة للعمل والألعاب."],
+["Gaming","إكسسوارات وأجهزة ألعاب."],
+["دعم","مساعدة تقنية."]
+]
+},
+
+photo:{
+title:"Alex Photography",
+className:"photo",
+logo:"ALEX",
+hero:"Stories through light.",
+text:"نحوّل اللحظات إلى صور تبقى للأبد.",
+sections:[
+["Wedding","تصوير حفلات ومناسبات."],
+["Portrait","تصوير البورتريه."],
+["Travel","تصوير السفر والمناظر."]
+]
+}
+
+};
+
+
+/* ================================
+   OPEN DEMO
+================================ */
 
 function openDemo(type){
 
-    const viewer =
-        document.getElementById("demoViewer");
+const data=demoData[type];
 
-    const content =
-        document.getElementById("demoContent");
+if(!data) return;
 
-    const status =
-        document.getElementById("demoStatus");
+document.getElementById(
+"modalTitle"
+).textContent=data.title;
 
-    let site="";
+let cards="";
 
+data.sections.forEach(function(item,index){
 
-    /* =================================================
-       RESTAURANT
-    ================================================= */
+cards+=`
 
-    if(type==="restaurant"){
+<div class="demo-card">
 
-        status.textContent =
-            "CAY DEMO / LA VISTA RESTAURANT";
+<h3>${item[0]}</h3>
 
-        site=`
+<p>${item[1]}</p>
 
-        <div class="demo-site">
+<button onclick="demoAction('${data.title}','${item[0]}')">
+اكتشف
+</button>
 
-            <div class="demo-nav">
+</div>
 
-                <div class="demo-logo">
-                    LA VISTA
-                </div>
-
-                <div class="demo-links">
-                    الرئيسية
-                    المنيو
-                    عن المطعم
-                    التواصل
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    🍽️
-                </div>
-
-                <h1>
-                    La Vista
-                </h1>
-
-                <p>
-                    تجربة طعام مختلفة في أجواء راقية.
-                </p>
-
-                <button class="action">
-                    استكشف المنيو
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    أهلاً بكم في La Vista Restaurant
-                    <div class="demo-price">
-                        جودة • طعم • تجربة
-                    </div>
-                </div>
-
-                <h2>
-                    ⭐ أشهر الأطباق
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🍔
-                        </div>
-
-                        <strong>
-                            Classic Burger
-                        </strong>
-
-                        <span>
-                            برغر كلاسيكي
-                        </span>
-
-                        <div class="demo-price">
-                            $8
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🍕
-                        </div>
-
-                        <strong>
-                            Italian Pizza
-                        </strong>
-
-                        <span>
-                            بيتزا إيطالية
-                        </span>
-
-                        <div class="demo-price">
-                            $10
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🍝
-                        </div>
-
-                        <strong>
-                            Pasta
-                        </strong>
-
-                        <span>
-                            باستا خاصة
-                        </span>
-
-                        <div class="demo-price">
-                            $9
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🥩
-                        </div>
-
-                        <strong>
-                            Steak
-                        </strong>
-
-                        <span>
-                            ستيك فاخر
-                        </span>
-
-                        <div class="demo-price">
-                            $18
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                La Vista Restaurant © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* =================================================
-       CAFE
-    ================================================= */
-
-    else if(type==="cafe"){
-
-        status.textContent =
-            "CAY DEMO / CAFÉ NOIR";
-
-        site=`
-
-        <div class="demo-site">
-
-            <div class="demo-nav">
-
-                <div class="demo-logo">
-                    CAFÉ NOIR ☕
-                </div>
-
-                <div class="demo-links">
-                    Home
-                    Menu
-                    About
-                    Contact
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    ☕
-                </div>
-
-                <h1>
-                    Café Noir
-                </h1>
-
-                <p>
-                    Coffee. Music. Moments.
-                </p>
-
-                <button class="action">
-                    View Menu
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    Specialty Coffee
-                    <div class="demo-price">
-                        Coffee • Dessert • Relax
-                    </div>
-                </div>
-
-                <h2>
-                    ☕ Our Favorites
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            ☕
-                        </div>
-
-                        <strong>
-                            Espresso
-                        </strong>
-
-                        <span>
-                            قهوة إسبريسو
-                        </span>
-
-                        <div class="demo-price">
-                            $3
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🥛
-                        </div>
-
-                        <strong>
-                            Latte
-                        </strong>
-
-                        <span>
-                            لاتيه
-                        </span>
-
-                        <div class="demo-price">
-                            $4
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🍫
-                        </div>
-
-                        <strong>
-                            Mocha
-                        </strong>
-
-                        <span>
-                            موكا
-                        </span>
-
-                        <div class="demo-price">
-                            $5
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🍰
-                        </div>
-
-                        <strong>
-                            Cake
-                        </strong>
-
-                        <span>
-                            حلوى خاصة
-                        </span>
-
-                        <div class="demo-price">
-                            $4
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                Café Noir © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* =================================================
-       BUSINESS
-    ================================================= */
-
-    else if(type==="business"){
-
-        status.textContent =
-            "CAY DEMO / NOVA BUSINESS";
-
-        site=`
-
-        <div class="demo-site">
-
-            <div class="demo-nav">
-
-                <div class="demo-logo">
-                    NOVA
-                </div>
-
-                <div class="demo-links">
-                    Services
-                    Company
-                    Projects
-                    Contact
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    🏢
-                </div>
-
-                <h1>
-                    NOVA BUSINESS
-                </h1>
-
-                <p>
-                    حلول رقمية تساعد أعمالك على النمو.
-                </p>
-
-                <button class="action">
-                    اكتشف خدماتنا
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    Business Solutions
-                    <div class="demo-price">
-                        Strategy • Technology • Growth
-                    </div>
-                </div>
-
-                <h2>
-                    خدماتنا
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            💻
-                        </div>
-
-                        <strong>
-                            Technology
-                        </strong>
-
-                        <span>
-                            حلول تقنية
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            📊
-                        </div>
-
-                        <strong>
-                            Strategy
-                        </strong>
-
-                        <span>
-                            استشارات الأعمال
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🌐
-                        </div>
-
-                        <strong>
-                            Digital
-                        </strong>
-
-                        <span>
-                            خدمات رقمية
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            📈
-                        </div>
-
-                        <strong>
-                            Growth
-                        </strong>
-
-                        <span>
-                            تطوير المشاريع
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                NOVA BUSINESS © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* =================================================
-       FASHION
-    ================================================= */
-
-    else if(type==="fashion"){
-
-        status.textContent =
-            "CAY DEMO / URBAN WEAR";
-
-        site=`
-
-        <div class="demo-site">
-
-            <div class="demo-nav">
-
-                <div class="demo-logo">
-                    URBAN WEAR
-                </div>
-
-                <div class="demo-links">
-                    New
-                    Men
-                    Women
-                    Sale
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    👕
-                </div>
-
-                <h1>
-                    URBAN WEAR
-                </h1>
-
-                <p>
-                    Modern streetwear for everyone.
-                </p>
-
-                <button class="action">
-                    Shop Now
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    NEW COLLECTION
-                    <div class="demo-price">
-                        Streetwear • Style • Urban
-                    </div>
-                </div>
-
-                <h2>
-                    👕 New Collection
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            👕
-                        </div>
-
-                        <strong>
-                            T-Shirt
-                        </strong>
-
-                        <span>
-                            Basic Urban T-Shirt
-                        </span>
-
-                        <div class="demo-price">
-                            $25
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🧥
-                        </div>
-
-                        <strong>
-                            Jacket
-                        </strong>
-
-                        <span>
-                            Urban Jacket
-                        </span>
-
-                        <div class="demo-price">
-                            $70
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            👖
-                        </div>
-
-                        <strong>
-                            Jeans
-                        </strong>
-
-                        <span>
-                            Street Jeans
-                        </span>
-
-                        <div class="demo-price">
-                            $55
-                        </div>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            👟
-                        </div>
-
-                        <strong>
-                            Sneakers
-                        </strong>
-
-                        <span>
-                            Urban Sneakers
-                        </span>
-
-                        <div class="demo-price">
-                            $80
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                Urban Wear © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* =================================================
-       BEAUTY
-    ================================================= */
-
-    else if(type==="beauty"){
-
-        status.textContent =
-            "CAY DEMO / LUNA BEAUTY";
-
-        site=`
-
-        <div class="demo-site">
-
-            <div class="demo-nav">
-
-                <div class="demo-logo">
-                    LUNA BEAUTY
-                </div>
-
-                <div class="demo-links">
-                    Home
-                    Services
-                    Products
-                    Contact
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    💄
-                </div>
-
-                <h1>
-                    Luna Beauty
-                </h1>
-
-                <p>
-                    Beauty. Confidence. You.
-                </p>
-
-                <button class="action">
-                    احجزي الآن
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    LUNA BEAUTY STUDIO
-                    <div class="demo-price">
-                        Beauty • Care • Confidence
-                    </div>
-                </div>
-
-                <h2>
-                    ✨ خدماتنا
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            💄
-                        </div>
-
-                        <strong>
-                            Makeup
-                        </strong>
-
-                        <span>
-                            Professional Makeup
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            💇
-                        </div>
-
-                        <strong>
-                            Hair
-                        </strong>
-
-                        <span>
-                            Hair Styling
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            ✨
-                        </div>
-
-                        <strong>
-                            Skin Care
-                        </strong>
-
-                        <span>
-                            Beauty Care
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            💅
-                        </div>
-
-                        <strong>
-                            Nails
-                        </strong>
-
-                        <span>
-                            Nail Services
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                Luna Beauty © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* =================================================
-       PHOTOGRAPHY
-    ================================================= */
-
-    else if(type==="photo"){
-
-        status.textContent =
-            "CAY DEMO / ALEX PHOTOGRAPHY";
-
-        site=`
-
-        <div class="demo-site">
-
-            <div class="demo-nav">
-
-                <div class="demo-logo">
-                    ALEX
-                </div>
-
-                <div class="demo-links">
-                    Portfolio
-                    About
-                    Services
-                    Contact
-                </div>
-
-            </div>
-
-
-            <div class="demo-hero">
-
-                <div class="demo-hero-icon">
-                    📸
-                </div>
-
-                <h1>
-                    Alex Photography
-                </h1>
-
-                <p>
-                    Capturing moments that last forever.
-                </p>
-
-                <button class="action">
-                    View Portfolio
-                </button>
-
-            </div>
-
-
-            <div class="demo-content">
-
-                <div class="demo-banner">
-                    PROFESSIONAL PHOTOGRAPHY
-                    <div class="demo-price">
-                        Moments • Stories • Memories
-                    </div>
-                </div>
-
-                <h2>
-                    📸 Portfolio
-                </h2>
-
-                <div class="demo-grid">
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🌆
-                        </div>
-
-                        <strong>
-                            Urban
-                        </strong>
-
-                        <span>
-                            City Photography
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            💍
-                        </div>
-
-                        <strong>
-                            Wedding
-                        </strong>
-
-                        <span>
-                            Wedding Sessions
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            👤
-                        </div>
-
-                        <strong>
-                            Portrait
-                        </strong>
-
-                        <span>
-                            Portrait Sessions
-                        </span>
-
-                    </div>
-
-
-                    <div class="demo-item">
-
-                        <div class="demo-item-icon">
-                            🌄
-                        </div>
-
-                        <strong>
-                            Nature
-                        </strong>
-
-                        <span>
-                            Nature Photography
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="demo-footer">
-                Alex Photography © 2026
-            </div>
-
-        </div>
-
-        `;
-
-    }
-
-
-    content.innerHTML=site;
-
-    viewer.style.display="block";
-
-    window.scrollTo({
-        top:viewer.offsetTop-80,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   CLOSE DEMO
-===================================================== */
-
-function closeDemo(){
-
-    const viewer =
-        document.getElementById("demoViewer");
-
-    viewer.style.display="none";
-
-    document
-    .getElementById("portfolio")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   ASSISTANT
-===================================================== */
-
-function ask(){
-
-    const input =
-        document.getElementById("question");
-
-    const chat =
-        document.getElementById("chat");
-
-    const question =
-        input.value
-        .trim()
-        .toLowerCase();
-
-    if(!question)
-        return;
-
-    let answer=
-        "ما عندي جواب جاهز لهذا السؤال حاليًا.";
-
-    if(
-        question.includes("python") ||
-        question.includes("بايثون")
-    ){
-
-        answer=
-        "Python لغة برمجة تستخدم في تطوير البرامج والأتمتة والذكاء الاصطناعي.";
-
-    }
-
-    else if(
-        question.includes("html")
-    ){
-
-        answer=
-        "HTML تستخدم لبناء هيكل صفحات الويب.";
-
-    }
-
-    else if(
-        question.includes("linux") ||
-        question.includes("لينكس")
-    ){
-
-        answer=
-        "Linux نظام تشغيل مفتوح المصدر يستخدم في الخوادم والبرمجة وغيرها.";
-
-    }
-
-    else if(
-        question.includes("kali") ||
-        question.includes("كالي")
-    ){
-
-        answer=
-        "Kali Linux توزيعة تستخدم للتعلم واختبارات الأمن السيبراني القانونية.";
-
-    }
-
-    else if(
-        question.includes("termux") ||
-        question.includes("ترمكس")
-    ){
-
-        answer=
-        "Termux يوفر بيئة أوامر شبيهة بـ Linux على Android.";
-
-    }
-
-    else if(
-        question.includes("github") ||
-        question.includes("گيت هب")
-    ){
-
-        answer=
-        "GitHub منصة لاستضافة وإدارة المشاريع البرمجية باستخدام Git.";
-
-    }
-
-    else if(
-        question.includes("dns")
-    ){
-
-        answer=
-        "DNS يحول أسماء النطاقات إلى عناوين IP.";
-
-    }
-
-    else if(
-        question.includes("ip")
-    ){
-
-        answer=
-        "IP هو عنوان يستخدم للتعرف على جهاز أو واجهة شبكة.";
-
-    }
-
-    else if(
-        question.includes("ابتزاز") ||
-        question.includes("تهديد")
-    ){
-
-        answer=
-        "إذا تعرضت لابتزاز: لا تدفع، لا ترسل المزيد، احفظ الأدلة، واطلب المساعدة من شخص موثوق أو جهة مختصة.";
-
-    }
-
-    else if(
-        question.includes("موقع") ||
-        question.includes("website")
-    ){
-
-        answer=
-        "CAY يوفر خدمة تصميم مواقع تبدأ من $50.";
-
-    }
-
-    chat.innerHTML=
-        "<b>أنت:</b> "+
-        escapeHTML(input.value)+
-        "<br><br>"+
-        "<b>CAY:</b> "+
-        escapeHTML(answer);
-
-    input.value="";
-
-}
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent=text;
-
-    return div.innerHTML;
-
-}
-
-
-/* =====================================================
-   REVEAL ANIMATION
-===================================================== */
-
-const observer=
-    new IntersectionObserver(
-        entries=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry
-                    .target
-                    .classList
-                    .add("show");
-
-                }
-
-            });
-
-        },
-        {
-            threshold:.08
-        }
-    );
-
-
-document
-.querySelectorAll(".reveal")
-.forEach(element=>{
-
-    observer.observe(element);
+`;
 
 });
 
 
-/* =====================================================
-   CLOSE MOBILE MENU
-===================================================== */
+document.getElementById(
+"demoWrap"
+).innerHTML=`
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(link=>{
+<div class="demo ${data.className}" id="demoHome">
 
-    link.addEventListener(
-        "click",
-        ()=>{
+<div class="demo-nav">
 
-            document
-            .getElementById("navLinks")
-            .classList
-            .remove("active");
+<div class="demo-logo">
+${data.logo}
+</div>
 
-        }
-    );
+<div class="demo-links">
+
+<button onclick="demoScroll('demoHome')">
+الرئيسية
+</button>
+
+<button onclick="demoScroll('demoServices')">
+الخدمات
+</button>
+
+<button onclick="demoScroll('demoAbout')">
+من نحن
+</button>
+
+<button onclick="demoScroll('demoContact')">
+تواصل
+</button>
+
+</div>
+
+</div>
+
+
+<div class="demo-hero">
+
+<div class="demo-hero-content">
+
+<h1>${data.hero}</h1>
+
+<p>${data.text}</p>
+
+<button
+class="demo-button"
+onclick="demoScroll('demoServices')"
+>
+اكتشف المزيد
+</button>
+
+</div>
+
+</div>
+
+
+<div class="demo-section" id="demoServices">
+
+<h2>الخدمات</h2>
+
+<p>
+استكشف ما يقدمه هذا الموقع.
+</p>
+
+<div class="demo-grid">
+
+${cards}
+
+</div>
+
+</div>
+
+
+<div
+class="demo-section"
+id="demoAbout"
+>
+
+<h2>من نحن</h2>
+
+<p style="color:#666;max-width:700px">
+هذا نموذج تجريبي من تصميم CAY.
+يمكن تخصيص الاسم والألوان والصور
+والخدمات والمحتوى بالكامل للزبون.
+</p>
+
+</div>
+
+
+<div
+class="demo-section"
+id="demoContact"
+>
+
+<h2>تواصل معنا</h2>
+
+<p style="color:#666">
+جاهز تبدأ مشروعك؟
+</p>
+
+<button
+class="demo-button"
+onclick="order('${data.title}')"
+>
+اطلب هذا الموقع
+</button>
+
+</div>
+
+
+<div class="demo-footer">
+
+${data.logo} © 2026
+
+</div>
+
+</div>
+`;
+
+document.getElementById(
+"modal"
+).classList.add("show");
+
+document.body.classList.add("lock");
+
+}
+
+
+/* ================================
+   DEMO SCROLL
+================================ */
+
+function demoScroll(id){
+
+const element=
+document.getElementById(id);
+
+if(element){
+
+element.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+
+}
+
+
+/* ================================
+   DEMO ACTION
+================================ */
+
+function demoAction(site,section){
+
+alert(
+"أنت تشاهد نموذج "+site+
+"\nالقسم: "+section+
+"\n\nيمكن تخصيص هذا القسم بالكامل للزبون."
+);
+
+}
+
+
+/* ================================
+   CLOSE DEMO
+================================ */
+
+function closeDemo(){
+
+document.getElementById(
+"modal"
+).classList.remove("show");
+
+document.body.classList.remove("lock");
+
+}
+
+
+/* ================================
+   ESC
+================================ */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Escape"){
+closeDemo();
+}
+
+});
+
+
+/* ================================
+   CLICK OUTSIDE
+================================ */
+
+document.getElementById(
+"modal"
+).addEventListener(
+"click",
+function(event){
+
+if(event.target===this){
+closeDemo();
+}
 
 });
 
